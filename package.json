@@ -1,0 +1,23 @@
+{
+  "name": "codeciting.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeciting/codeciting.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeciting/codeciting.com/issues"
+  },
+  "homepage": "https://github.com/codeciting/codeciting.com#readme",
+  "devDependencies": {
+    "vuepress": "^1.0.3"
+  }
+}
