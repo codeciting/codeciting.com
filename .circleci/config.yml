@@ -41,5 +41,5 @@ jobs:
 
       - deploy:
           command: |
-            scp -r .vuepress/dist oldman@www.codeciting.com:codeciting.com
+            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r .vuepress/dist oldman@www.codeciting.com:codeciting.com
 
