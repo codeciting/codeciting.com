@@ -38,3 +38,8 @@ jobs:
 
       - store_artifacts:
           path: .vuepress/dist
+
+      - deploy:
+          command: |
+            scp -r .vuepress/dist oldman@www.codeciting.com:codeciting.com
+
