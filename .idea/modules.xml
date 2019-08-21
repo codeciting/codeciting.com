@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/codeciting.com.iml" filepath="$PROJECT_DIR$/.idea/codeciting.com.iml" />
+      <module fileurl="file://$USER_HOME$/Documents/vueuv/.idea/vueuv.iml" filepath="$USER_HOME$/Documents/vueuv/.idea/vueuv.iml" />
     </modules>
   </component>
 </project>
