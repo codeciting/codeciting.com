@@ -1,12 +1,10 @@
-const path = require('path')
-
 module.exports = {
   head: [
     [
       'link',
       {
         rel: 'stylesheet',
-        href: 'https://cdn.bootcss.com/KaTeX/0.6.0/katex.min.css'
+        href: 'https://cdn.bootcss.com/KaTeX/0.11.0/katex.min.css'
       }
     ]
   ],
@@ -20,7 +18,7 @@ module.exports = {
     ]
   },
   extendMarkdown: md => {
-    md.use(require('markdown-it-katex'))
+    md.use(require('./plugins/markdown-it/katex'))
     md.use(require('markdown-it-plantuml'), {
       server: 'https://api.codeciting.com/plantuml/',
       generateSource (source, config) {
