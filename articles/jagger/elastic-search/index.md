@@ -48,6 +48,6 @@ Elastic Search是一个分布式的索引服务。它索引的内容是以文档
 
 ### Index - 索引
 
-#### Analyzer
+#### [Analyzer](analyzer.md)
 
 ElasticSearch 内置了强大的分词器功能，为`text`类型字段建立灵活的索引方式。
