@@ -21,13 +21,13 @@ module.exports = {
   extendMarkdown: md => {
     md.use(require('markdown-it-katex'))
     md.use(require('markdown-it-plantuml'), {
-      server: 'http://api.codeciting.com/plantuml/',
+      server: 'https://api.codeciting.com/plantuml/',
       generateSource (source, config) {
         return `${config.server}?source=${encodeURIComponent((new Buffer(
           `
 @startuml ${config.diagramName || 'uml'}
 ' auto injected theme
-!include ${path.join(config.server, 'theme.puml')}
+!include ${config.server}theme.puml
 
 ${source}
 @enduml`
