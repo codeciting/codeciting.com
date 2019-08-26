@@ -1,5 +1,7 @@
 # Changelog
 
+[![CircleCI](https://circleci.com/gh/codeciting/codeciting.com.svg?style=svg)](https://circleci.com/gh/codeciting/codeciting.com)
+
 - 2019-08-26
     - 支持数学公式，使用`markdown-it-katex`插件。可以在文档中直接使用`$`或`$$`。
       
