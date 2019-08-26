@@ -12,11 +12,3 @@ features:
  Vue.
 footer: pLUs1SeCONdFOrThEoLDMaN
 ---
-
-$$E=mc^2$$
-
-@startuml Like
-
-Alice -> Bob: Hi
-
-@enduml
