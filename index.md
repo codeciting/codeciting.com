@@ -13,4 +13,10 @@ features:
 footer: pLUs1SeCONdFOrThEoLDMaN
 ---
 
-<Math style="font-size: 32px; text-align: center; display: block">$$E=mc^2$$</Math>
+$$E=mc^2$$
+
+@startuml Like
+
+Alice -> Bob: Hi
+
+@enduml
