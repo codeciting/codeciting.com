@@ -3,7 +3,6 @@
   var echartsInitialized = false
 
   define(document.getElementById('app'), function (app) {
-    console.log(app)
     if (app === null) {
       document.onreadystatechange = function () {
         if (document.readyState !== 'complete') {
@@ -36,7 +35,6 @@
         if(el.getAttribute('_echarts_instance_')) {
           return
         }
-        console.log(el, el.dataset)
         loadScript(dataset.echartsVersion, function () {
           define(el.innerText, function (text) {
             el.style.opacity = ''
