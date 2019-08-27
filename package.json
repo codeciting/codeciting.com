@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "katex": "^0.11.0",
+    "markdown-it-container": "^2.0.0",
     "markdown-it-plantuml": "^1.4.1"
   }
 }

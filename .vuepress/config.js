@@ -1,3 +1,4 @@
+
 module.exports = {
   head: [
     [
@@ -5,6 +6,12 @@ module.exports = {
       {
         rel: 'stylesheet',
         href: 'https://cdn.bootcss.com/KaTeX/0.11.0/katex.min.css'
+      }
+    ],
+    [
+      'script',
+      {
+        src: '/plugin-echarts.js'
       }
     ]
   ],
@@ -18,6 +25,7 @@ module.exports = {
     ]
   },
   extendMarkdown: md => {
+    require('./plugins/markdown-it/echarts')(md)
     md.use(require('./plugins/markdown-it/katex'))
     md.use(require('markdown-it-plantuml'), {
       server: 'https://api.codeciting.com/plantuml/',
