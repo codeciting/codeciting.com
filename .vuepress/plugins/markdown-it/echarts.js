@@ -26,8 +26,7 @@ module.exports = function installEChartsPlugin (md) {
           width = params[1]
           height = params[2]
         }
-
-        return `<div style="display: none;" data-echarts data-echarts-version="${version}" data-echarts-width="${width}" data-echarts-height="${height}">`
+        return `<div style="opacity: 0; width=${width}; height=${height}" data-echarts data-echarts-version="${version}" data-echarts-width="${width}" data-echarts-height="${height}">`
       } else {
         return '</div>'
       }

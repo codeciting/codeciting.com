@@ -2,47 +2,64 @@
 
   var echartsInitialized = false
 
-  document.onreadystatechange = function () {
-    if (document.readyState !== 'complete') {
-      return
+  define(document.getElementById('app'), function (app) {
+    console.log(app)
+    if (app === null) {
+      document.onreadystatechange = function () {
+        if (document.readyState !== 'complete') {
+          return
+        }
+        __init()
+      }
+    } else {
+      __init()
     }
-    initEcharts()
-    //
-    // define(document.getElementById('app').__vue__, function (app) {
-    //   if (app._isMounted) {
-    //     initEcharts()
-    //   } else {
-    //     app.$on('hooks:mounted', initEcharts)
-    //   }
-    // })
-  }
 
-  function initEcharts () {
+    function __init () {
+      define(document.getElementById('app').__vue__, function (app) {
+        initEcharts(app)
+      })
+    }
+
+    window.__vuepressPluginEChartsReload__ = __init
+  })
+
+  function initEcharts (app) {
     if (echartsInitialized) {
       updateECharts()
       return
     }
     echartsInitialized = true
-    document.querySelectorAll('[data-echarts]').forEach(function (el) {
-      var dataset = el.dataset
-      loadScript(dataset.echartsVersion, function () {
-        define(el.innerText, function (text) {
-          el.style.display = ''
-          el.style.maxWidth = dataset.echartsWidth
-          el.style.height = dataset.echartsHeight
-          el.style.margin = '12px auto'
-          el.style.overflow = 'scroll'
-          define(echarts.init(el, 'default'), function (chart) {
-            try {
-              chart.setOption(eval('(' + text + ')'))
-            } catch (e) {
-              console.error(text + ' is not a valid js statement.')
-            }
+    function init () {
+      document.querySelectorAll('[data-echarts]').forEach(function (el) {
+        var dataset = el.dataset
+        if(el.getAttribute('_echarts_instance_')) {
+          return
+        }
+        console.log(el, el.dataset)
+        loadScript(dataset.echartsVersion, function () {
+          define(el.innerText, function (text) {
+            el.style.opacity = ''
+            el.style.maxWidth = dataset.echartsWidth
+            el.style.height = dataset.echartsHeight
+            el.style.margin = '12px auto'
+            el.style.overflow = 'scroll'
+            define(echarts.init(el, 'default'), function (chart) {
+              try {
+                chart.setOption(eval('(' + text + ')'))
+              } catch (e) {
+                console.error(text + ' is not a valid js statement.')
+              }
+            })
           })
         })
       })
+    }
+    window.r = app.$router
+    app.$router.afterEach(function() {
+      app.$nextTick(init)
     })
-
+    init()
   }
 
   function updateECharts () {
