@@ -22,7 +22,27 @@ module.exports = {
       { text: 'Jagger', link: '/articles/jagger/' },
       { text: 'Asuio', link: '/articles/asuio/' },
       { text: 'Changelog', link: '/changelog' }
-    ]
+    ],
+    sidebar: {
+       '/articles/asuio/parallel/': [
+        {
+          collapsable: true,
+          children: [
+            ['/articles/asuio/paraller/', '并发编程的挑战'],
+            ['/articles/asuio/paraller/two', 'Java并发机制和底层实现原理']
+          ]
+        }
+        ],
+       '/articles/asuio/jvm/': [
+          {
+            collapsable: false,
+            children: [
+              ['/articles/asuio/jvm/','Java内存区域与内存溢出异常'],
+              ['/articles/asuio/jvm/two', '垃圾收集器与内存分配策略']
+            ]
+          }
+        ],
+    }
   },
   extendMarkdown: md => {
     require('./plugins/markdown-it/echarts')(md)
