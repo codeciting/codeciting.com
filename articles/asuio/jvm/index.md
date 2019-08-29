@@ -1,9 +1,4 @@
----
 
-sidebar: auto
-sidebarDepth: 2
-
----
 # Java内存区域与内存溢出异常
 
 ## 运行时数据区域
