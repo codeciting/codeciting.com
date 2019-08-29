@@ -1,6 +1,9 @@
 
 module.exports = {
-  plugins: ['@vuepress/last-updated'],
+  plugins: [
+    '@vuepress/last-updated',
+    '@vuepress/nprogress'
+  ],
   head: [
     [
       'link',
