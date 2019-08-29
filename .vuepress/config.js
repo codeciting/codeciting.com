@@ -30,10 +30,10 @@ module.exports = {
     sidebar: {
        '/articles/asuio/parallel/': [
         {
-          collapsable: true,
+          collapsable: false,
           children: [
-            ['/articles/asuio/paraller/', '并发编程的挑战'],
-            ['/articles/asuio/paraller/two', 'Java并发机制和底层实现原理']
+            ['/articles/asuio/parallel/', '并发编程的挑战'],
+            ['/articles/asuio/parallel/two', 'Java并发机制和底层实现原理']
           ]
         }
         ],
