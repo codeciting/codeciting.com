@@ -23,8 +23,6 @@
     "vuepress": "^1.0.3"
   },
   "dependencies": {
-    "@codeciting/vuepress-plugin-site": "^0.1.4",
-    "@vuepress/plugin-last-updated": "^1.0.3",
-    "@vuepress/plugin-nprogress": "^1.0.3"
+    "@codeciting/vuepress-plugin-site": "^0.1.4"
   }
 }

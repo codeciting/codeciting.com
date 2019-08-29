@@ -1,15 +1,19 @@
 module.exports = {
   plugins: [
-    '@vuepress/last-updated',
-    // '@vuepress/nprogress',
     '@codeciting/site'
   ],
   themeConfig: {
     logo: '/site-icon.svg',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Jagger', link: '/articles/jagger/' },
-      { text: 'Asuio', link: '/articles/asuio/' },
+      { text: '@Jagger', link: '/articles/jagger/' },
+      { text: '@Asuio', link: '/articles/asuio/' },
+      {
+        text: 'Projects', items: [
+          { text: 'VuePress Plugins', link: 'https://github.com/codeciting/codeciting-vuepress-plugins' },
+          { text: 'SpringBoot Runner', link: 'https://github.com/codeciting/springboot-runner' }
+        ]
+      },
       { text: 'Changelog', link: '/changelog' }
     ],
     sidebar: {
@@ -31,6 +35,14 @@ module.exports = {
           ]
         }
       ]
-    }
+    },
+    lastUpdated: true,
+    repo: 'codeciting/codeciting.com',
+    repoLabel: 'Join us!',
+    docsRepo: 'codeciting/codeciting.com',
+    docsDir: '',
+    docsBranch: 'master',
+    editLinks: true,
+    editLinkText: 'Help us improve this page!'
   }
 }
