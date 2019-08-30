@@ -33,7 +33,8 @@ module.exports = {
           collapsable: false,
           children: [
             ['/articles/asuio/parallel/', '并发编程的挑战'],
-            ['/articles/asuio/parallel/two', 'Java并发机制和底层实现原理']
+            ['/articles/asuio/parallel/two', 'Java并发机制和底层实现原理'],
+            ['/articles/asuio/parallel/three', 'Java内存模型']
           ]
         }
         ],
