@@ -1,34 +1,21 @@
-
 module.exports = {
-  plugins: [
-    '@vuepress/last-updated',
-    '@vuepress/nprogress'
-  ],
-  head: [
-    [
-      'link',
-      {
-        rel: 'stylesheet',
-        href: 'https://cdn.bootcss.com/KaTeX/0.11.0/katex.min.css'
-      }
-    ],
-    [
-      'script',
-      {
-        src: '/plugin-echarts.js'
-      }
-    ]
-  ],
+  theme: '@codeciting/codeciting',
   themeConfig: {
     logo: '/site-icon.svg',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Jagger', link: '/articles/jagger/' },
-      { text: 'Asuio', link: '/articles/asuio/' },
+      { text: '@Jagger', link: '/articles/jagger/' },
+      { text: '@Asuio', link: '/articles/asuio/' },
+      {
+        text: 'Projects', items: [
+          { text: 'VuePress Plugins', link: 'https://github.com/codeciting/codeciting-vuepress-plugins' },
+          { text: 'SpringBoot Runner', link: 'https://github.com/codeciting/springboot-runner' }
+        ]
+      },
       { text: 'Changelog', link: '/changelog' }
     ],
     sidebar: {
-       '/articles/asuio/parallel/': [
+      '/articles/asuio/parallel/': [
         {
           collapsable: false,
           children: [
@@ -37,48 +24,23 @@ module.exports = {
             ['/articles/asuio/parallel/three', 'Java内存模型']
           ]
         }
-        ],
-       '/articles/asuio/jvm/': [
-          {
-            collapsable: false,
-            children: [
-              ['/articles/asuio/jvm/','Java内存区域与内存溢出异常'],
-              ['/articles/asuio/jvm/two', '垃圾收集器与内存分配策略']
-            ]
-          }
-        ],
-    }
-  },
-  extendMarkdown: md => {
-    require('./plugins/markdown-it/echarts')(md)
-    md.use(require('./plugins/markdown-it/katex'))
-    md.use(require('markdown-it-plantuml'), {
-      server: 'https://api.codeciting.com/plantuml/',
-      generateSource (source, config) {
-        return `${config.server}?source=${encodeURIComponent((new Buffer(
-          `
-@startuml ${config.diagramName || 'uml'}
-' auto injected theme
-!include ${config.server}theme.puml
-
-${source}
-@enduml`
-        )).toString('base64'))}`
-      },
-      render (tokens, idx, options, env, slf) {
-        const token = tokens[idx]
-
-        // "alt" attr MUST be set, even if empty. Because it's mandatory and
-        // should be placed on proper position for tests.
-        //
-        // Replace content with actual value
-
-        token.attrs[token.attrIndex('alt')][1] =
-          slf.renderInlineAsText(token.children, options, env)
-
-        token.attrs.push(['style', 'display: block; margin: 12px auto;'])
-        return slf.renderToken(tokens, idx, options)
-      }
-    })
+      ],
+      '/articles/asuio/jvm/': [
+        {
+          collapsable: false,
+          children: [
+            ['/articles/asuio/jvm/', 'Java内存区域与内存溢出异常'],
+            ['/articles/asuio/jvm/two', '垃圾收集器与内存分配策略']
+          ]
+        }
+      ]
+    },
+    repo: 'codeciting/codeciting.com',
+    repoLabel: 'Join us!',
+    docsRepo: 'codeciting/codeciting.com',
+    docsDir: '',
+    docsBranch: 'master',
+    editLinks: true,
+    editLinkText: 'Edit this page'
   }
 }

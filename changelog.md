@@ -2,13 +2,43 @@
 
 [![CircleCI](https://circleci.com/gh/codeciting/codeciting.com.svg?style=svg)](https://circleci.com/gh/codeciting/codeciting.com)
 
+- 2019-08-30
+    - 扩展默认主题，现在所有插件已整合入主题`@codeciting/vuepress-theme-codeciting`中。
+    
+      - 新主题会给每个页面添加`Recent updates`块，展示作者。
+    
+    - 提供新插件`gitinfo`，给主题提供必要的git信息：
+      - `$page.recentUpdates`：当前页面近期更新
+      - `$page.recentPages`：整个网站近期更新的页面
+
+- 2019-08-29
+    - 所有插件功能移入新项目引入[codeciting-vuepress-plugins](https://github.com/codeciting/codeciting-vuepress-plugins)
+      
+      用法：
+      ```bash
+      yarn add @codeciting/vuepress-plugin-site
+      ```
+      
+      ```javascript
+      module.exports = {
+        plugins: ['@codeciting/site']
+      }
+      ```
+      
+      目前包含以下插件：
+      - math
+      - plantuml
+      - echarts
+      
+    - ***ECharts插件用法更新***：去掉自定义版本号功能。
+
 - 2019-08-27
     - 支持[ECharts](https://echarts.baidu.com/index.html)
       
-      使用`markdown-it-container`，参数0固定为`echarts`，参数1（可选）为版本号、参数2/3（可选）为`maxWidth`/`height`。
+      使用`markdown-it-container`，参数0固定为`echarts`，参数（可选）为`maxWidth`/`height`。
       用法：
       ```markdown
-      :::echarts 4.2.1 600px 400px
+      :::echarts 600px 400px
         {
           xAxis: {
             type: 'category',
@@ -24,7 +54,7 @@
         }
       :::
       ```
-      :::echarts 4.2.1 600px 400px
+      :::echarts 600px 400px
         {
           xAxis: {
             type: 'category',
