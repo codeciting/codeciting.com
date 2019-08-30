@@ -1,7 +1,5 @@
 module.exports = {
-  plugins: [
-    '@codeciting/site'
-  ],
+  theme: '@codeciting/codeciting',
   themeConfig: {
     logo: '/site-icon.svg',
     nav: [
@@ -36,13 +34,12 @@ module.exports = {
         }
       ]
     },
-    lastUpdated: true,
     repo: 'codeciting/codeciting.com',
     repoLabel: 'Join us!',
     docsRepo: 'codeciting/codeciting.com',
     docsDir: '',
     docsBranch: 'master',
     editLinks: true,
-    editLinkText: 'Help us improve this page!'
+    editLinkText: 'Edit this page'
   }
 }

@@ -670,36 +670,51 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@codeciting/vuepress-plugin-echarts@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-plugin-echarts/-/vuepress-plugin-echarts-0.1.3.tgz#9c9c02fe68ffdb3fb58c851d3edef5a8cf17150c"
-  integrity sha512-3qCUUWq+kvQ5l71n8x0V9k3wImz/SE08f2MTnKLosRfpKTRxtdzftz6npn7+qNo8/l4xJvP0P8HNtbSE5+2Aag==
+"@codeciting/vuepress-plugin-echarts@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-plugin-echarts/-/vuepress-plugin-echarts-0.2.0.tgz#3d07f06275c58e39cdeca021a92825eeca107cf1"
+  integrity sha512-FCz2psdtLZhS/i349GF9tfgrtRpYkr9s5mgfvBDpJVVkI2umSmOXVKcOkL3FljPBJkSK0r6tnWbvUf/emtNsEQ==
   dependencies:
     load-script2 "^2.0.2"
     markdown-it-container "^2.0.0"
 
-"@codeciting/vuepress-plugin-math@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-plugin-math/-/vuepress-plugin-math-0.1.4.tgz#fcf2569d12e835e6e6aed5fd12aeb990f54270ad"
-  integrity sha512-/RHbtYNL1Zj9q4dlzxZigQAFSxktlsFneoDdCOU+4J3VWQjEObGV3ANZhrkRppjuWUZwjU45aS9E9Us8ZS/sFA==
+"@codeciting/vuepress-plugin-gitinfo@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-plugin-gitinfo/-/vuepress-plugin-gitinfo-0.2.2.tgz#45aee7af02615c401814c93a422c5e36210461c1"
+  integrity sha512-XNXXUOUfgG1tHA2WdI1P+fsS2rSjq4HmxPK5u/3S+t6MmOVwEyC3y+MD41HaNrmOy51tRVTN2bJ8Oph+BYZ5HA==
+  dependencies:
+    cross-spawn "^6.0.5"
+
+"@codeciting/vuepress-plugin-math@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-plugin-math/-/vuepress-plugin-math-0.2.0.tgz#c03861f591eda322c9ce45ed9679318c858fe034"
+  integrity sha512-BEImw9ORcLvSMj4r1zEVoSh13B3y7Ay0m/0ry33dAVm3+snnxgzB9AC+A97kZz+vEYeCaGhc2To7+scuBToZiQ==
   dependencies:
     katex "^0.11.0"
 
-"@codeciting/vuepress-plugin-plantuml@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-plugin-plantuml/-/vuepress-plugin-plantuml-0.1.3.tgz#36355cd081423dfa114dc4f17a783edaa5528fbd"
-  integrity sha512-k+34AkPKUUBfVdf9MKQ93TjKevNYKbImdy769w/3KiJfHGw3VYJEX1eUHVi+NIIau8A6SktlPxG93Dtda9BfAA==
+"@codeciting/vuepress-plugin-plantuml@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-plugin-plantuml/-/vuepress-plugin-plantuml-0.2.0.tgz#88db964e20d03f61c8c89d93685e2d8737d20b61"
+  integrity sha512-A1vTllVdth464Mc6PnR8abVsBqg/tX6Mb2VfTob3oS+gDlMqgsRcBX2ki2EjD5DNETzzVVsmOR12Tv7W/jNtQw==
   dependencies:
     markdown-it-plantuml "^1.4.1"
 
-"@codeciting/vuepress-plugin-site@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-plugin-site/-/vuepress-plugin-site-0.1.4.tgz#29d4344fbac52ad007eacb170553dd75252adad0"
-  integrity sha512-o3F0m25IGshCtLQr9tlRpjCHdUDhDDidRqieVDlBMEJZMSTGf2o2857XZhoYLF8ZcQ7l5SH6Dqb+0EkyH1Sa/g==
+"@codeciting/vuepress-plugin-site@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-plugin-site/-/vuepress-plugin-site-0.2.2.tgz#d411b0d9faf65a9d3cfbec06ef65a497f540426b"
+  integrity sha512-2LphAG1cfHgKM1m+VYXEwaHGwqbHeeAcfndtL5SuEzJ0ivI00BgrbdmHgIPdGQcKnP0OqwMkwPi4Iw7ge5AOCQ==
   dependencies:
-    "@codeciting/vuepress-plugin-echarts" "^0.1.3"
-    "@codeciting/vuepress-plugin-math" "^0.1.4"
-    "@codeciting/vuepress-plugin-plantuml" "^0.1.3"
+    "@codeciting/vuepress-plugin-echarts" "^0.2.0"
+    "@codeciting/vuepress-plugin-gitinfo" "^0.2.2"
+    "@codeciting/vuepress-plugin-math" "^0.2.0"
+    "@codeciting/vuepress-plugin-plantuml" "^0.2.0"
+
+"@codeciting/vuepress-theme-codeciting@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@codeciting/vuepress-theme-codeciting/-/vuepress-theme-codeciting-0.2.2.tgz#e6149128e2f3e0fc4b44a24ac5e40d0ad2ec8d37"
+  integrity sha512-97t6wJN4e+aKT3/mw4E927DP3JrSlzUTmnwOby7A15QoUCxZaAuphrN1DpXgGaJsx3cbaxgI3bTnOoLviQo3SQ==
+  dependencies:
+    "@codeciting/vuepress-plugin-site" "^0.2.2"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

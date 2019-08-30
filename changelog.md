@@ -2,6 +2,15 @@
 
 [![CircleCI](https://circleci.com/gh/codeciting/codeciting.com.svg?style=svg)](https://circleci.com/gh/codeciting/codeciting.com)
 
+- 2019-08-30
+    - 扩展默认主题，现在所有插件已整合入主题`@codeciting/vuepress-theme-codeciting`中。
+    
+      - 新主题会给每个页面添加`Recent updates`块，展示作者。
+    
+    - 提供新插件`gitinfo`，给主题提供必要的git信息：
+      - `$page.recentUpdates`：当前页面近期更新
+      - `$page.recentPages`：整个网站近期更新的页面
+
 - 2019-08-29
     - 所有插件功能移入新项目引入[codeciting-vuepress-plugins](https://github.com/codeciting/codeciting-vuepress-plugins)
       
