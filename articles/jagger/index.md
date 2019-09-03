@@ -1,5 +1,7 @@
 # Jagger's Page
 
+[CV](cv)
+
 ## Articles
 
 - [LogStash](logstash.md)

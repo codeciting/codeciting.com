@@ -1,5 +1,6 @@
 module.exports = {
   theme: '@codeciting/codeciting',
+  plugins: [require('./plugins/global-methods')],
   themeConfig: {
     logo: '/site-icon.svg',
     nav: [
@@ -30,6 +31,16 @@ module.exports = {
           children: [
             ['/articles/asuio/jvm/', 'Java内存区域与内存溢出异常'],
             ['/articles/asuio/jvm/two', '垃圾收集器与内存分配策略']
+          ]
+        }
+      ],
+      '/articles/jagger/cv/': [
+        {
+          collapsable: false,
+          children: [
+            ['/articles/jagger/cv/', '简历'],
+            ['/articles/jagger/cv/coding-marks', '能力自评'],
+              ['/articles/jagger/cv/projects', '项目经验']
           ]
         }
       ]
