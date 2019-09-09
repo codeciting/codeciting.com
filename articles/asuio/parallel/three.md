@@ -145,4 +145,76 @@
 
   线程A在释放锁之前所有可见的共享变量，在线程B获取同一个锁之后，将立刻变得对线程B可见。
 
-- 锁的释放和获取的内存语义
+- 锁的释放和获取的内存语义  
+  当线程释放锁的时，JMM会把该线程对应的本地内存中的共享变量刷新到主内存中；当线程回去锁时，JMM会把该线程对应的本地内存置为无效。
+  锁释放与volatile写有相同的内存语义；锁获取与volatile读有相同的内存语义。
+  - 线程A释放一个锁，实质上是线程A向接下来将要获取这个锁的某个线程发出了（线程A对共享变量所做的修改）消息。
+  - 线程B获取一个锁，实质上是线程B接收了之前某个线程发出的（在释放这个锁之前对共享变量所做的修改）消息
+  - 线程A释放锁，线程B获取这个锁，这个过程实质上就是线程A通过主内存向线程B发送消息。
+## final域的内存语义  
+- final域的重排序规则  
+  :::tip
+  1. 在构造函数内对一个final域的写入，与随后把这个被构造对象的引用赋值给一个引用变量。这两个操作之间不能重排序。
+  2. 初次读一个包含final域的对象的引用，与随后初次读这个final域，这两个操作之间不能重排序。
+  :::
+- 写final域的重排序规则  
+  写final域的重排序规则可以确保： 在对象引用为任意线程可见之前，对象的final域已经被正确初始化过了，而普通域不具有这个保障。
+
+- 读final域的重排序规则  
+  读final域的重排序规则是，在一个线程中，初次读对象与初次读该对象包含的final域，JMM禁止处理器重排序这两个操作。
+  读final域的重排序规则可以确保： 在读一个对象的final域之前，一定会先读包含这个final域的对象的引用。
+- final域为引用类型  
+  在构造函数中一个final引用的对象的成员域的写入，与随后在构造函数外把这个被构造对象的引用赋值给一个引用变量，这两个操作不能重排序。
+- 为什么final引用不能从构造函数内“溢出”
+  ```Java
+  class FinalReferenceEscapeExample {
+      final int i;
+      static FinalReferenceEscapeExample obj;
+
+      public FinalReferenceEscapeExample() {  
+          i = 1;                      //1写final域￼
+          obj = this;                 //2 this引用在此"逸出"￼
+      }
+      public static void writer() {
+          new FinalReferenceEscapeExample();
+      }
+      public static void reader() {
+          if (obj != null) {           //3￼
+              int temp = obj.i;        //4
+          }
+      }
+  }
+  ```
+  假设一个线程A执行writer()方法，另一个线程B执行reader()方法。这里的操作2使得对象还未完成构造前就为线程B可见。即使这里的操作2是构造函数的最后一步，且在程序中操作2排在操作1的后面，执行reader()方法的线程任然可能无法看到final域被初始化后的值，因为这里的操作1和操作2之间可能被重排序。
+  在构造函数返回前，被构造对象的引用不能为其他线程所见，以为此时final域可能还没有被初始化。在构造函数返回后，任意线程都将保证看到final域正确初始化之后的值。
+## happens-before
+- JMM的设计  
+  JMM把happens-before要求禁止的重排序分为了下面两类。
+  - 会改变程序执行结果的重排序。
+  - 不会改变程序执行结果的重排序。     
+
+  JMM对这两种不同性质的重排序，采取了不同的策略。
+  - 对于会改变程序执行结果的重排序，JMM要求编译器和处理器必须禁止这种重排序。
+  - 对于不会改变程序执行结果的重排序，JMM要求编译器和处理器不做要求。
+- happens-before的定义
+  1. 如果一个操作happens-before另一个操作，那么第一个操作的执行结果将对第二个操作可见，而且第一个操作的执行顺序排在第一个操作之前。
+  2. 两个操作之间存在happens-before关系，并不意味着Java平台的具体时间必须要按照happens-before关系执行的顺序来执行。如果重排序之后的执行结果，与按happens-before关系来执行的结果一致，那么这种重排序并不非法。
+
+  :::tip
+  1. 对于上面的1，从程序员的角度可以这样理解happens-before： 如果A happens-before B，那么Java内存模型将向程序员保证A操作结果将对B可见，且A的执行顺序排在B之前
+  2. 对于上面的2，是JMM对编译对象和处理器重排序的约束规则。JMM其实是在遵循一个基本原则：只要不改变程序的执行结果（单线程或者已经做好正确同步的多线程程序），编译器和处理器怎么优化都行。
+  :::
+
+  - as-if-serial与happens-before
+    - as-if-serial语义保证单线程内程序的执行结果不会被改变，happens-before关系保证正确同步的多线程的执行结果不被改变
+    - as-if-serial语义给编写单线程程序的程序员提供了一个环境：单线程程序是按程序的顺序来执行的。happens-before关系给编写正确同步的多线程程序的程序员创造了一个幻境： 正确同步的多线程程序是按happens-before执行的顺序来执行的。
+
+    as-if-serial语义和happens-before这么做的目的，都是为了在不改变程序执行结果的前提下，尽可能地提高程序执行的并行度。
+
+  - happens-before规则
+    - *程序顺序规则： 一个线程中的每个操作，happens-before于改线程中的任意后续操作*
+    - *监视器锁规则： 对一个锁的解锁，happens-before于随后对这个锁的加锁*
+    - *volatile变量规则： 对一个volatile域的写，happnes-before于任意后续对这个volatile域的读*
+    - *传递性： 如果A happens-before B， 且B happens-before C， 那么A happens-before与C*
+    - *start规则： 如果线程A执行操作ThreadB.start()（启动线程B），那么A线程的ThreadB.start()操作happens-before线程B中的任意操作*
+    - *join()规则： 如果线程A执行ThreadB.join()并成功返回，那么线程B中的任意操作happens-before于线程A从ThreadB.join()操作成功返回。*
