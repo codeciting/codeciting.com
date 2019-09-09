@@ -1,5 +1,6 @@
 module.exports = {
   theme: '@codeciting/codeciting',
+  plugins: [require('./plugins/global-methods')],
   themeConfig: {
     logo: '/site-icon.svg',
     nav: [
@@ -43,6 +44,16 @@ module.exports = {
           children: [
             ['/articles/asuio/java8/','基础知识'],
             ['/articles/asuio/java8/two', '通过行为参数化传递代码']
+          ]
+        }
+      ],
+      '/articles/jagger/cv/': [
+        {
+          collapsable: false,
+          children: [
+            ['/articles/jagger/cv/', '简历'],
+            ['/articles/jagger/cv/coding-marks', '能力自评'],
+              ['/articles/jagger/cv/projects', '项目经验']
           ]
         }
       ]

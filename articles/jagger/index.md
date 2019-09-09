@@ -1,5 +1,9 @@
 # Jagger's Page
 
++{{parseInt((new Date()-new Date('1926-8-17').getTime())/1000)}}s
+
+[CV](cv)
+
 ## Articles
 
 - [LogStash](logstash.md)
