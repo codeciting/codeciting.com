@@ -22,7 +22,7 @@
   本地内存是一个抽象概念，并不是真实存在的，他涵盖了缓存、写缓冲区、寄存器以及其他的硬件以及编译器优化
   :::
 
-  <div align='center'> <img src='/jmm-struct.png' alt="test"></div>
+  <div align='center'> <img src='/img/asuoi/jmm-struct.png' alt="test"></div>
 
   从上图可以看到如果线程A要和线程B通信的话，必须要经过一下两个步骤：
   - 线程A把本地内存A中更新过的共享变量刷新到主内存中去

@@ -33,8 +33,9 @@ module.exports = {
           children: [
             ['/articles/asuio/jvm/', 'Java内存区域与内存溢出异常'],
             ['/articles/asuio/jvm/two', '垃圾收集器与内存分配策略'],
-            // ['/articles/asuio/jvm/three', '类文件结构']
+            ['/articles/asuio/jvm/three', '类文件结构'],
             ['/articles/asuio/jvm/four', '虚拟机类加载机制'],
+            ['/articles/asuio/jvm/five','虚拟机字节码执行引擎'],
           ]
         }
       ],
@@ -53,7 +54,7 @@ module.exports = {
           children: [
             ['/articles/jagger/cv/', '简历'],
             ['/articles/jagger/cv/coding-marks', '能力自评'],
-              ['/articles/jagger/cv/projects', '项目经验']
+            ['/articles/jagger/cv/projects', '项目经验']
           ]
         }
       ]
