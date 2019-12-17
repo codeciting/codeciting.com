@@ -1,5 +1,5 @@
 ## 测试一下分享会不会有图片
-<div align='center'> <img src='/img/asuio/300x300.png' alt="test"></div>
+<div align='center'> <img src='/img/asuio/150x150.png' alt="test"></div>
 ## 内存分配与回收策略
 - Java技术体系中所提倡的自动内存管理最终可以归结为自动化解决两个问题：内存分配和回收策略
 + ***对象优先在Eden分配***
