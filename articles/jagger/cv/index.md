@@ -61,5 +61,7 @@
 - 公司项目
   - [TDU网站及教学平台](projects.md#TDU网站及教学平台)： 2017-10至今
   - [账户中心维护与重构](projects.md#账户中心维护与重构)：2018-07至2019-07
+  - [广告投放RTA](projects.md#广告投放)：2019-08至2019-12
+  - [小微贷款业务](projects.md#小微贷款业务)：2019-11至今
 - 个人项目
   - [codeciting.com](projects.md#codeciting)：2019-08至今
