@@ -52,9 +52,8 @@ module.exports = {
         {
           collapsable: false,
           children: [
-            ['/articles/jagger/cv/', '简历'],
+            ['/articles/jagger/cv/', 'CV'],
             ['/articles/jagger/cv/coding-marks', '能力自评'],
-            ['/articles/jagger/cv/projects', '项目经验']
           ]
         }
       ]
