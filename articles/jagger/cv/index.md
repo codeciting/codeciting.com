@@ -75,6 +75,16 @@ sidebarDepth: 3
 
 ## 项目经验
 
+- 公司项目
+  - 广告投放工具
+  - 小微贷款业务服务
+  - 广告投放RTA
+  - 账户中心维护与重构
+  - TDU在线教育网站
+- 个人项目
+  - swift-cdp
+  - codeciting.com
+
 ::: tip
 
 项目顺序为时间倒叙排列
@@ -83,7 +93,25 @@ sidebarDepth: 3
 
 - 公司项目
   
-  ### 小微贷款业务：2019-11至今      
+  ### 广告投放工具：2019-09至今
+    
+    主要实现帮助客户更高效地进行多平台、多账号广告投放的工具，功能包括：
+    - 浏览器自动化（Python + chrome）
+      - 投放平台自动登陆
+      - 投放报表信息拉取
+      - DMP人群包上传
+      - 根据配置进行自动批量投放（广点通）
+    - 回调服务（Java + Spring*）
+      - 媒体端点击回调
+      - 广告主端转化回调统计
+    - 自动报表（Python + Excel VBA）
+      - 通过收集的数据自动拼接CSV报表
+      - 通过Excel模版与CSV数据生成Excel报表，并自动更新透视图
+      - 截取报表中关键内容图片，并自动发送汇总邮件
+    - 媒体平台：广点通（腾讯）、小米、OPPO、vivo、华为、爱奇艺、头条等
+    - 广告主：淘宝系（淘宝、闲鱼、支付宝）、腾讯新闻、QQ音乐等
+
+  ### 小微贷款业务：2019-11至2019-08      
     
     ::: warning
     ***项目涉及公司隐私***，不方便详细介绍。
@@ -144,6 +172,11 @@ sidebarDepth: 3
 ---
 
 - 个人项目
+  ### Swift cdp：2020-11
+    使用SwiftNIO与webdriver以及Chrome Devtool Platform（CDP）进行交互，以控制浏览器。
+    - 核心代码[swift-cdp](https://github.com/634750802/swift-cdp)
+    - CDP模块代码（通过CDP文档生成）[swift-cdp-domains](https://github.com/634750802/swift-cdp-domains)
+
   ### ![Codeciting.com](../../../.vuepress/public/site-icon.svg)：2019-08至今
     
     [codeciting.com](https://www.codeciting.com)由我和同学同时出资申请阿里云服务器搭建，用于测试一些临时的奇思妙想以及写一些博客。
