@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/codeciting/codeciting.com#readme",
   "devDependencies": {
-    "@codeciting/vuepress-theme-codeciting": "^0.2.2",
+    "@codeciting/vuepress-theme-codeciting": "^0.2.4",
     "vuepress": "^1.0.3"
   }
 }

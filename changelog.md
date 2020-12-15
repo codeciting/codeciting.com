@@ -1,6 +1,8 @@
 # Changelog
 
 [![CircleCI](https://circleci.com/gh/codeciting/codeciting.com.svg?style=svg)](https://circleci.com/gh/codeciting/codeciting.com)
+- 2020-12-15
+    - 优化ECharts在手机上的样式
 
 - 2019-08-30
     - 扩展默认主题，现在所有插件已整合入主题`@codeciting/vuepress-theme-codeciting`中。
